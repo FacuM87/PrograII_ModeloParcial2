@@ -42,5 +42,5 @@ public abstract class Habitacion {
     }
     
     
-    public abstract double calcularPrecioEstadia(int dias);
+    public abstract double calcularPrecioEstadia(int dias) throws Exception;
 }

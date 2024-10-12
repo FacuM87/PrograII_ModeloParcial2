@@ -26,7 +26,7 @@ public class Hotel {
         for (Habitacion habitacion : inventarioHabitaciones) {
             if (habitacion.getCodHabitacion().equals(codigoHabitacion) && habitacion.isOcupada()) {
                 throw new Exception("La habitacion esta ocupada");
-            } else {
+            } else if(habitacion.getCodHabitacion().equals(codigoHabitacion)){
                 if (habitacion instanceof HabitacionDeluxe habitacionDeluxe) {
                     if (habitacionDeluxe.getNumeroNochesMinimas() > dias) {
                         throw new Exception("No se alcanza el minimo de noches para Habitacion Deluxe");

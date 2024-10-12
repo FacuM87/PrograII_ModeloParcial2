@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
-/**
- *
- * @author facun
- */
 public class HabitacionDeluxe extends Habitacion {
 
     private boolean incluyeDesayuno;
@@ -23,7 +16,9 @@ public class HabitacionDeluxe extends Habitacion {
 
 
     @Override
-    public double calcularPrecioEstadia(int dias) {
+    public double calcularPrecioEstadia(int dias) throws Exception{
+        if(dias<1){ throw new Exception("El numero de dias debe ser mayor a 0"); }
+        
         double precioTotal;
         double precioEstadia = this.precioPorNoche * dias; 
         
@@ -48,12 +43,10 @@ public class HabitacionDeluxe extends Habitacion {
             }else{
                 precioTotal = precioEstadia;
             }
-            
-            
+                
         }      
         
-        
-    return precioTotal;
+        return precioTotal;
     }
 
     @Override
@@ -85,7 +78,5 @@ public class HabitacionDeluxe extends Habitacion {
     public void setNumeroNochesMinimas(int numeroNochesMinimas) {
         this.numeroNochesMinimas = numeroNochesMinimas;
     }
-
-    
     
 }

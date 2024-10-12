@@ -35,12 +35,13 @@ public class HabitacionEstandar extends Habitacion {
     
    
     @Override
-    public double calcularPrecioEstadia(int dias) {
+    public double calcularPrecioEstadia(int dias) throws Exception {
+        if(dias<1){ throw new Exception("El numero de dias debe ser mayor a 0"); }
         
         double retorno;
         double precioTotalSinLimpieza = this.precioPorNoche * dias;
         if(this.limpiezaIncluida){            
-            retorno = precioTotalSinLimpieza + this.costoLimpieza; // interpreto que el valor de costoLimpieza que se consigue es por dia
+            retorno = precioTotalSinLimpieza + this.costoLimpieza; 
         }else{
             retorno = precioTotalSinLimpieza;
         }
